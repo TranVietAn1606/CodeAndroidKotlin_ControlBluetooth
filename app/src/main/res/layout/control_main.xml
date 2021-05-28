@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#595656"
+    android:backgroundTint="#595656">
+
+    <ImageButton
+        android:id="@+id/upBtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="72dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_up"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/downBtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="32dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/upBtn"
+        app:layout_constraintStart_toStartOf="@+id/upBtn"
+        app:layout_constraintTop_toBottomOf="@+id/upBtn"
+        app:srcCompat="@drawable/button_dowm"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/leftBtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="48dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/upBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/upBtn"
+        app:srcCompat="@drawable/button_left"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/rightBtn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/downBtn"
+        app:layout_constraintEnd_toEndOf="@+id/leftBtn"
+        app:layout_constraintTop_toTopOf="@+id/downBtn"
+        app:srcCompat="@drawable/button_right"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imgControl"
+        android:layout_width="251dp"
+        android:layout_height="246dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/downBtn"
+        app:layout_constraintEnd_toStartOf="@+id/leftBtn"
+        app:layout_constraintStart_toEndOf="@+id/upBtn"
+        app:layout_constraintTop_toTopOf="@+id/upBtn"
+        app:srcCompat="@drawable/stop_control" />
+
+    <Button
+        android:id="@+id/disconnectBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="disConnect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="@+id/leftBtn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameConnectTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Chưa Kết Nối"
+        app:layout_constraintBottom_toBottomOf="@+id/stateBtn"
+        app:layout_constraintStart_toEndOf="@+id/stateBtn"
+        app:layout_constraintTop_toTopOf="@+id/stateBtn"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <ImageButton
+        android:id="@+id/stateBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:padding="0sp"
+        android:paddingStart="0sp"
+        android:paddingLeft="0sp"
+        android:paddingTop="0sp"
+        android:paddingEnd="0sp"
+        android:paddingRight="0sp"
+        android:paddingBottom="0sp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/nameConnectTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/close"
+        tools:ignore="MissingConstraints" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@android:style/Widget.Material.SeekBar"
+        android:layout_width="295dp"
+        android:layout_height="19dp"
+        android:accessibilityLiveRegion="none"
+        android:background="@drawable/road"
+        android:soundEffectsEnabled="false"
+        android:splitTrack="false"
+        android:thumb="@drawable/seekbar"
+        app:layout_constraintBottom_toBottomOf="@+id/disconnectBtn"
+        app:layout_constraintCircleRadius="@dimen/cardview_default_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/disconnectBtn"
+        app:layout_constraintVertical_bias="0.551" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="31dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+        app:layout_constraintStart_toEndOf="@+id/seekBar"
+        app:layout_constraintTop_toTopOf="@+id/seekBar"
+        app:srcCompat="@drawable/speed" />
+
+    <TextView
+        android:id="@+id/speedTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="0"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <ImageButton
+        android:id="@+id/lampIB"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:background="#D3CFCF"
+        android:baselineAlignBottom="false"
+        android:clickable="false"
+        android:scaleType="fitEnd"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:srcCompat="@drawable/lamp"
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/hornIB"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="#D3CFCF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/stopIB"
+        app:layout_constraintStart_toEndOf="@+id/lampIB"
+        app:layout_constraintTop_toTopOf="@+id/lampIB"
+        app:srcCompat="@drawable/horn"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/stopIB"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="30dp"
+        android:background="#D3CFCF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/seekBar"
+        app:layout_constraintTop_toTopOf="@+id/hornIB"
+        app:srcCompat="@drawable/stop"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/on_sound_IT"
+        android:icon="@android:drawable/ic_lock_silent_mode_off"
+        android:title="On"
+        />
+    <item
+        android:id="@+id/off_sound_IT"
+        android:icon="@android:drawable/ic_lock_silent_mode"
+        android:title="Off"
+        />
+</menu>
